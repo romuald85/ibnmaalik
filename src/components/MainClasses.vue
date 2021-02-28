@@ -13,14 +13,51 @@
                 la session suivante.</p>
             <p class="mt-3">Les tarifs des différents cours sont indiqués dans le tableau récapitulatif suivant (exemples non exhaustifs):</p>
             <table class="table table-striped">
-                <colgroup span="4" class="columns"></colgroup>
+                <thead>
                     <tr>
-                        <th v-for="thead in theads" v-bind:key="thead.name">{{thead.name}}</th>
+                        <th>Type de cours</th>
+                        <th>Fréquence</th>
+                        <th>Tarifs (pour l'ensemble de la session)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Collectifs</td>
+                        <td>2h / semaine <br>
+                            4h / semaine <br>
+                            6h / semaine
+                        </td>
+                        <td>
+                            32 € <br>
+                            64 € <br>
+                            96 €
+                        </td>
                     </tr>
                     <tr>
-                        <td v-for="type in types" v-bind:key="type.name">{{type.name}}</td>
+                        <td>Individuels</td>
+                        <td>2h / semaine <br>
+                            4h / semaine <br>
+                            6h / semaine
+                        </td>
+                        <td>
+                            40 € <br>
+                            80 € <br>
+                            120 €
+                        </td>
                     </tr>
+                    <tr>
+                        <td>Séminaire</td>
+                        <td>5h / semaine pendant 6 semaines</td>
+                        <td>80 €</td>
+                    </tr>             
+                </tbody>
             </table>
+
+            <p class="mt-3 text-start">Les tarifs:</p>
+            <ul class="mb-5">
+                <li class="text-start">L'heure est à 5 €</li>
+                <li class="text-start">Le séminaire est à 80 € (3 élèves minimum)</li>
+            </ul>
         </div>
     </div>
 </template>
@@ -29,21 +66,7 @@
         name: 'MainClasses',
         data() {
             return {
-                theads: [{
-                        name: 'Type de cours'
-                    },
-                    {
-                        name: 'Fréquence'
-                    },
-                    {
-                        name: 'Tarifs (pour l\'ensemble de la session'
-                    },
-                ],
-                types: [
-                    {name: 'Collectifs'},
-                    {name: 'Individuels'},
-                    {name: 'Séminaire'}
-                ]
+                
             }
         }
     }

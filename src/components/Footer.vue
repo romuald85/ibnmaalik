@@ -21,8 +21,8 @@ export default {
                 {name: "Qui sommes nous", href: 'who-are-we'},
                 {name: "Inscription", href: 'register'},
                 {name: "Cours", href: 'classes'},
-                {name: "Nous contacter"},
-                {name: 'Conditions générales de vente'}
+                {name: "Nous contacter", href: 'contact'},
+                {name: 'Conditions générales de vente', href: 'terms'}
             ],
             books: [
                 {title: 'Nour al bayan'},

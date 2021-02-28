@@ -55,7 +55,7 @@ export default {
         {name: "Qui sommes nous", href: 'who-are-we'},
         {name: "Inscription", href: 'register'},
         {name: "Cours", href: 'classes'},
-        {name: "Nous contacter", href: '/'},
+        {name: "Nous contacter", href: 'contact'},
       ],
     };
   },
