@@ -1,8 +1,8 @@
 <template>
 <div class="bannerbox">
-    <img src="image/img1.jpg" class="img-thumbnail" alt="...">
+    <img src="image/img1.jpg" class="img-thumbnail" alt="bannierey">
     <div class="text">
-        <h2>Institut de langue arabe en ligne</h2>
+        <h2></h2>
     </div>
 </div>
 </template>
@@ -11,8 +11,13 @@ export default {
     name: 'Banner',
     data () {
         return {
-            
+
         }
+    },
+    mounted() {
+        document.querySelectorAll('.nav-link').forEach((title) => {
+            return title.innerHTML
+        })
     }
 }
 </script>

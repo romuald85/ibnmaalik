@@ -1,7 +1,7 @@
 <template>
   <nav class="nav1 navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <div>
+      <div class="block-title">
         <a class="navbar-brand" href="/">{{ title }}</a>
         <p>Institut de langue arabe en ligne</p>
       </div>
@@ -20,7 +20,7 @@
         <ul class="navbar-nav">
           <li class="nav-item d-flex">
             <a
-              class="nav-link active"
+              class="nav-link"
               v-bind:href="tab.href"
               v-for="tab in tabs"
               v-bind:key="tab.name"
@@ -68,7 +68,14 @@ export default {
     closeSearch() {
       document.querySelector('.nav1').style.display = "block"
       document.querySelector('.nav2').style.display = "none"
-    }
+    },
+  },
+  mounted() {
+    document.querySelectorAll('.nav-link').forEach((tab) => {
+      if(tab.href === window.location.href){
+        tab.classList.add('active')
+      }
+    })
   }
 };
 </script>
@@ -78,7 +85,18 @@ export default {
     display: none;
   }
 
+  .block-title{
+    padding: 0 0 0 20px;
+  }
+
+  a.nav-link.active{
+    border-bottom: solid 2px #198754;
+  }
+
   a.nav-link:hover{
     border-bottom: solid 2px #198754;
+  }
+  a.nav-link{
+    margin: 0 20px;
   }
 </style>
