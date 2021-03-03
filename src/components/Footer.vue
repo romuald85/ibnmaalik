@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-dark">
+    <footer class="bg-transparent">
         <div class="row">
             <div class="container d-flex">
                 <div class="col-md-6 d-flex flex-column">
