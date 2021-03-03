@@ -2,7 +2,7 @@
 <div class="bannerbox">
     <img src="image/img1.jpg" class="img-thumbnail" alt="bannierey">
     <div class="text">
-        <h2></h2>
+        <h2>{{title}}</h2>
     </div>
 </div>
 </template>
@@ -11,13 +11,8 @@ export default {
     name: 'Banner',
     data () {
         return {
-
+            title: document.querySelector('a.nav-link.active').innerText
         }
-    },
-    mounted() {
-        document.querySelectorAll('.nav-link').forEach((title) => {
-            return title.innerHTML
-        })
     }
 }
 </script>
