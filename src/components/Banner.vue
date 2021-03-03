@@ -1,10 +1,12 @@
 <template>
-<div class="bannerbox">
-    <img src="image/img1.jpg" class="img-thumbnail" alt="bannierey">
-    <div class="text">
-        <h2>{{title}}</h2>
+<header>
+    <div class="bannerbox">
+        <img src="image/desert.jpg" class="img-thumbnail" alt="banniere">
+        <div class="text">
+            <h2>{{title}}</h2>
+        </div>
     </div>
-</div>
+</header>
 </template>
 <script>
 export default {
@@ -17,16 +19,26 @@ export default {
 }
 </script>
 <style scoped>
+header{
+    height: 100%;
+}
 .bannerbox{
+    /*background: linear-gradient(to bottom, #000, #0001),
+    fixed no-repeat center url("~@/assets/images/desert.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;*/
     position: relative;
+    height: 100%;
     width: 100%;
-    padding: 0;
-    margin: 0;
+    /*padding: 0;
+    margin: 0;*/
 }
 
 img{
-    height: 500px;
+    /*height: 500px;*/
     width: 100%;
+    height: 100%;
+    top: 0;
 }
 
 .text{

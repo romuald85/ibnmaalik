@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav1 navbar navbar-expand-lg navbar-light bg-white">
+  <nav class="nav1 navbar navbar-expand-lg navbar-light bg-transparent">
     <div class="container-fluid">
       <div class="block-title">
         <a class="navbar-brand" href="/">{{ title }}</a>
@@ -76,7 +76,7 @@ export default {
         tab.classList.add('active')
       }
     })
-    const nav = document.querySelector('.navbar')
+    /*const nav = document.querySelector('.navbar')
     const offsetHeight = nav.offsetHeight
     window.addEventListener('scroll', () => {
       if(window.scrollY >= offsetHeight){
@@ -84,13 +84,15 @@ export default {
         nav.style.width = '100%'
         nav.style.top = 0
       }
-    })
+    })*/
   }
 };
 </script>
 
 <style scoped>
   .navbar{
+    position: fixed;
+    width: 100%;
     z-index: 200;
   }
   .nav2{

@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="mt-5 container">
         <div class="row">
             <h1 class="mt-5">بسم الله الرحمن الرحيم</h1>
             <p class="mt-3">L'institut Ibn Maalik vous aide à devenir arabophone en suivant des cours de langue arabe en ligne</p>
