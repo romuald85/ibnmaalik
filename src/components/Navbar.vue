@@ -32,7 +32,7 @@
     </div>
   </nav>
   <div class="container">
-    <nav class="nav2 navbar navbar-light bg-light">
+  <nav class="nav2 navbar navbar-light bg-light">
     <form class="container-fluid">
       <div class="input-group">
         <button class="input-group-text btn btn-outline-success" id="basic-addon1"><i class="fas fa-search"></i></button>
@@ -91,7 +91,7 @@ export default {
 
 <style scoped>
   .navbar{
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     z-index: 200;
   }
