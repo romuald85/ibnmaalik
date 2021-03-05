@@ -3,30 +3,57 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div> -->
+    <div class="modal" tabindex="-1" id="myModal">
+      <i class="mt-4 mr-5 bg-transparent float-right fas fa-times" data-bs-dismiss="modal" aria-label="Close"></i>
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-transparent">
+          <div class="modal-body bg-transparent">
+            <ul class="list-group list-group-flush">
+              <li v-for="tab in tabs" v-bind:key="tab.name" class="list-group-item text-center bg-transparent"><a v-bind:href="tab.href" class="text-dark text-decoration-none">{{tab.name}}</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   <header>
     <div class="bannerbox">
-      <div class="navpopup">
-        <nav class="nav1 navbar navbar-expand-lg navbar-light bg-transparent d-flex">
-          <div class="container-fluid">
-            <div class="block-title">
-              <a class="navbar-brand" href="/">{{ title }}</a>
-              <p>La clé qui ouvre la porte de la science</p>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <i class="hamburger fas fa-bars" v-on:click="openNavPopup"></i>
+      <nav class="nav1 navbar navbar-dark" aria-label="First navbar example">
+        <div class="container-fluid">
+          <div>
+            <a class="navbar-brand text-dark" href="/">{{ title }}</a>
+            <p>La clé qui ouvre la porte de la science</p>
           </div>
-        </nav>
-        <i class="close fas fa-times" v-on:click="closeNavPopup"></i>
-        <ul class="list-navpopup text-center">
-          <li>vfbg</li>
-          <li>fdbg</li>
-          <li>bgfb</li>
-          <li>vbfgbg</li>
+          <button class="navbar-toggler navbar-dark custom-toggler" type="button" data-bs-toggle="modal" data-bs-target="#myModal"
+            aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- <div class="collapse navbar-collapse" id="navbarsExample01">
+        <ul class="navbar-nav me-auto mb-2">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
         </ul>
-      </div>
+        <form>
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </form>
+      </div> -->
+        </div>
+      </nav>
       <div class="pt-5 pl-5">
         <h2 class="pt-5 pl-5 text-start second-title">Insitut de langue arabe en ligne</h2>
       </div>
@@ -116,14 +143,16 @@
         }
       })
       const nav = document.querySelector('.navbar')
-      const offsetTop = nav.offsetTop
+      const offsetHeight = nav.offsetHeight
       window.addEventListener('scroll', () => {
-        if (window.scrollY >= offsetTop) {
+        if (window.scrollY >= offsetHeight) {
+          nav.style.background = '#ffff'
           nav.style.position = 'fixed'
           nav.style.width = '100%'
           nav.style.top = 0
         } else {
           nav.style.position = 'static';
+          nav.style.background = 'transparent'
         }
       })
     }
@@ -136,6 +165,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+  }
+
+  .navbar{
+    background-color: transparent;
   }
 
   .navpopup {
@@ -159,6 +192,10 @@
     height: 850px;
   }
 
+  .modal{
+    background-color: rgba(140, 217, 241, 0.8);
+  }
+
   .text {
     position: absolute;
     text-align: center;
@@ -167,7 +204,7 @@
     right: 0;
   }
 
-  .hamburger {
+  .fa-times {
     cursor: pointer;
   }
 
@@ -175,12 +212,19 @@
     cursor: pointer;
   }
 
-  .navbar {
-    /* position: fixed; */
+  .nav1 {
     width: 100%;
     z-index: 200;
   }
 
+  .custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(44,62,80, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(44,62,80);
+} 
+  
   .nav2 {
     display: none;
   }
