@@ -1,14 +1,19 @@
 <template>
     <section class="bg-light">
         <div class="container">
-            <div class="p-5 row bg-light">
-                <div class="col">
+            <div class="row bg-light">
+                <div class="pt-5 col-md-6">
                     <h1 class="text-center">بسم الله الرحمن الرحيم</h1>
                     <p class="mt-3 text-center">L'institut Ibn Maalik vous aide à devenir arabophone en suivant des cours de langue arabe en ligne</p>
                     <p class="mt-3 text-center">Apprendre l'arabe en ligne est idéal pour ceux qui n'ont pas la possibilité de voyager.Le programme de l'institut vous permettra d'avancer session par session jusqu'à atteindre un niveau avancé pour la compréhension de la langue ainsi qu'une maîtrise de ses règles de grammaire.Il sera aussi introduit dans le programme des sessions dédiées à l'oral pour maîtriser le parler.</p>
                     <p class="mt-3 text-center">Nous vous proposons un programme structuré avec des enseignants expérimentés d'Égypte habitués à enseigner aux élèves non arabophones.</p>
                     <p class="mt-3 text-center">Nos cours sont ouverts à toutes et à tous sans limite d'âge (hommes, femmes et enfants).</p>
                     <p class="text-start text-center">L'inscription est simple remplissez notre formulaire:<span><a href="#"> cliquez ici</a></span></p>
+                </div>
+                <div class="col-md-6">
+                    <img src="assets/images/desert.jpg" class="rounded mx-auto d-block" alt="...">
+                    <div class="bg-color">
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,5 +81,19 @@ export default {
 }
 </script>
 <style scoped>
+    .bg-color{
+        background-color: #8CD9F1;
+        width: 100%;
+        height: 100%;
+        transform: translateX(45%);
+        transform: translateY(-59%);
+    }
 
+    img{
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        transform: translateY(50%);
+        z-index: 100;
+    }
 </style>
