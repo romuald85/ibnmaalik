@@ -11,7 +11,6 @@
                     <p class="text-start text-center">L'inscription est simple remplissez notre formulaire:<span><a href="#"> cliquez ici</a></span></p>
                 </div>
                 <div class="col-md-6">
-                    <img src="assets/images/desert.jpg" class="rounded mx-auto d-block" alt="...">
                     <div class="bg-color">
                     </div>
                 </div>
@@ -86,14 +85,18 @@ export default {
         width: 100%;
         height: 100%;
         transform: translateX(45%);
-        transform: translateY(-59%);
     }
 
-    img{
-        position: relative;
-        max-width: 100%;
-        height: auto;
-        transform: translateY(50%);
-        z-index: 100;
+    .bg-color:before{
+        background: url('/assets/images/macbook.jpg') center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 100%; 
+        height: 85%;
+        content:"";
+        transform: translateX(-40%);
+        margin-top: 11%;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     }
 </style>

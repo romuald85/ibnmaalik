@@ -188,7 +188,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    width: 100%;
     height: 850px;
   }
 
