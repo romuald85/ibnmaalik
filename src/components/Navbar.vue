@@ -110,20 +110,20 @@
         document.querySelector('.nav2').style.display = "none"
       },
 
-      openNavPopup() {
-        document.querySelector('.navpopup').style.position = 'static'
-        document.querySelector('.navpopup').style.transitionDuration = '0.5s'
-        document.querySelector('.navpopup').style.width = '100%'
-        document.querySelector('.list-navpopup').style.display = 'block'
-        document.querySelector('.hamburger').style.display = 'none'
-      },
-      closeNavPopup() {
-        document.querySelector('.navpopup').style.position = 'absolute'
-        document.querySelector('.navpopup').style.width = 0
-        document.querySelector('.list-navpopup').style.display = 'none'
-        document.querySelector('.hamburger').style.display = 'block'
-      }
-    },
+    //   openNavPopup() {
+    //     document.querySelector('.navpopup').style.position = 'static'
+    //     document.querySelector('.navpopup').style.transitionDuration = '0.5s'
+    //     document.querySelector('.navpopup').style.width = '100%'
+    //     document.querySelector('.list-navpopup').style.display = 'block'
+    //     document.querySelector('.hamburger').style.display = 'none'
+    //   },
+    //   closeNavPopup() {
+    //     document.querySelector('.navpopup').style.position = 'absolute'
+    //     document.querySelector('.navpopup').style.width = 0
+    //     document.querySelector('.list-navpopup').style.display = 'none'
+    //     document.querySelector('.hamburger').style.display = 'block'
+    //   }
+   },
     mounted() {
       document.querySelectorAll('.nav-link').forEach((tab) => {
         if (tab.href === window.location.href) {
@@ -136,15 +136,11 @@
       const offsetHeightTitle = bigTitle.offsetHeight
       window.addEventListener('scroll', () => {
         if (window.scrollY >= offsetHeight + offsetHeightTitle) {
-          nav.style.padding = '10px 0'
-          nav.style.background = '#ffff'
-          nav.style.transition = 'all 1s ease-in-out'
-          nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.3)'
+          nav.classList.remove('nav-effects-scrollup')
+          nav.classList.add('nav-effects-scrolldown')
         } else {
-          nav.style.background = 'transparent'
-          nav.style.transition = 'all 1s ease-in-out'
-          nav.style.padding = '0 0'
-          nav.style.boxShadow = '0 0 0 0'
+          nav.classList.remove('nav-effects-scrolldown')
+          nav.classList.add('nav-effects-scrollup')
         }
       })
     }
@@ -159,7 +155,23 @@
     z-index: 200;
   }
 
-  .navpopup {
+  .nav-effects-scrolldown{
+    padding: 0 0;
+    background: #fff;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+
+  .nav-effects-scrollup{
+    background: transparent;
+    transition: all 0.4s ease-in-out;
+    padding: 10px 0;
+    box-shadow: 0 0 0 0;
+  }
+
+
+  /* .navpopup {
     background-color: rgba(140, 217, 241, 0.8);
     position: absolute;
     height: 850px;
@@ -168,7 +180,7 @@
 
   .list-navpopup {
     display: none;
-  }
+  } */
 
   .bannerbox {
     background: linear-gradient(to bottom, #B6E3F1, #0001),
