@@ -16,38 +16,7 @@
             </div>
         </div>
     </section>
-    <section class="mt-5 mb-5 bg-white">
-        <div class="container">
-            <p class="ml-3 text-center">Les mérites d'étudier en classe:</p>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="m-2 card h-50">
-                        <div class="card-body">
-                            <p>Al mounafasa c'est à dire la concurrence dans le bien.</p>
-                        </div>
-                    </div>
-                    <div class="m-2 card h-50">
-                        <div class="card-body">
-                            <p>Le dialogue avec les autres élèves.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="m-2 card h-50">
-                        <div class="card-body">
-                            <p>L'aide dans les devoirs.</p>
-                        </div>
-                    </div>
-                    <div class="m-2 card h-50">
-                        <div class="card-body">
-                            <p>Profiter des autres durant le cours là où l'on a des manquements.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="pt-5 pb-5 bg-light">
+    <!-- <section class="pt-5 pb-5 bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
@@ -63,7 +32,7 @@
             </div>
             <p class="text-center">Que la Paix et la Bénédiction soient sur notre Prophète Muhammad, sa famille et ses compagnons.</p>
         </div>
-    </section>
+    </section> -->
 </template>
 <script>
 import VueAos from 'vue-aos'

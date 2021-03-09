@@ -5,17 +5,10 @@
   </div> -->
     
   <router-view />
-  <div id="footer">
-    <Footer />
-  </div>
 </template>
 <script>
-  import Footer from '@/components/Footer.vue'
   export default {
     name: 'App',
-    components: {
-      Footer
-    },
     data() {
       return {
         
