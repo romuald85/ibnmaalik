@@ -3,6 +3,7 @@
     <Navbar/>
     <MainHome/>
     <MainPrograms/>
+    <MainWhoAreWe/>
     <!-- <Footer/> -->
   </div>
 </template>
@@ -13,12 +14,13 @@ import HelloWorld from '@/components/HelloWorld.vue'
 import Navbar from '@/components/Navbar.vue'
 import MainHome from '@/components/MainHome.vue'
 import MainPrograms from '@/components/MainPrograms.vue'
+import MainWhoAreWe from '@/components/MainWhoAreWe.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld, Navbar, MainHome, MainPrograms, Footer
+    HelloWorld, Navbar, MainHome, MainPrograms, MainWhoAreWe, Footer
   }
 }
 </script>
