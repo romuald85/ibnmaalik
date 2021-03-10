@@ -1,8 +1,9 @@
 <template>
-    <div class="row">
-        <div class="container-fluid">
-            <div class="bg-image">
-
+    <div class="container-fluid">
+        <div class="row bg-image">
+            <div class="cont-text-button">
+                <h3 class="pb-4 text-dark">Vous avez une question ? N'hésitez pas à nous contacter</h3>
+                <button type="button" class="btn btn-outline-dark btn-lg">Contact</button>
             </div>
         </div>
     </div>
@@ -24,5 +25,11 @@ export default {
         background-repeat: no-repeat;
         background-size: cover;
         height: 300px;
+        display: flex;
+    }
+
+    .cont-text-button{
+       text-align: center;
+       margin: auto;
     }
 </style>

@@ -1,10 +1,11 @@
 <template>
-  <div class="home">
+  <div class="home bg-light">
     <Navbar/>
     <MainHome/>
     <MainPrograms/>
     <MainWhoAreWe/>
     <MainBackground/>
+    <MainBooks/>
     <!-- <Footer/> -->
   </div>
 </template>
@@ -17,12 +18,13 @@ import MainHome from '@/components/MainHome.vue'
 import MainPrograms from '@/components/MainPrograms.vue'
 import MainWhoAreWe from '@/components/MainWhoAreWe.vue'
 import MainBackground from '@/components/MainBackground.vue'
+import MainBooks from '@/components/MainBooks.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld, Navbar, MainHome, MainPrograms, MainWhoAreWe, MainBackground, Footer
+    HelloWorld, Navbar, MainHome, MainPrograms, MainWhoAreWe, MainBackground, MainBooks, Footer
   }
 }
 </script>

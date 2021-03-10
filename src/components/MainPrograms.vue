@@ -2,10 +2,10 @@
     <section class="mt-5 mb-5 bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="mt-4 col-md-4">
                     <h2 class="our-programs">Nos programmes</h2>
                 </div>
-                <div class="row-flex col-md-8">
+                <div class="mt-4 row-flex col-md-8">
                     <div class="card">
                         <div class="card-body">
                             <a href="register"><p>Cours d'arabe</p></a>
