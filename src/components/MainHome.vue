@@ -62,5 +62,6 @@ export default {
     .macbook{
         width: 90%;
         height: auto;
+         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     }
 </style>

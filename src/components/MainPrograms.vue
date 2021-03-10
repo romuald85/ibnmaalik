@@ -8,45 +8,45 @@
                 <div class="row-flex col-md-8">
                     <div class="card">
                         <div class="card-body">
-                            <p>Cours d'arabe</p>
-                            <p>Cours de Coran</p>
-                            <p>Cours de tajwid</p>
+                            <a href="register"><p>Cours d'arabe</p></a>
+                            <a href="register"><p>Cours de Coran</p></a>
+                            <a href="register"><p>Cours de tajwid</p></a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <p>La durée d'une session est de 4 semaines</p>
+                            <a href="register"><p>La durée d'une session est de 4 semaines</p></a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <p>Cours individuel</p>
-                            <p>Une seule personne</p>
-                            <p>5 € / h</p>
+                            <a href="register"><p>Cours individuel</p></a>
+                            <a href="register"><p>Une seule personne</p></a>
+                            <a href="register"><p>5 € / h</p></a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <p>Cours en groupe</p>
-                            <p>3 personnes minimum</p>
-                            <p>4 € / h</p>
+                            <a href="register"><p>Cours en groupe</p></a>
+                            <a href="register"><p>3 personnes minimum</p></a>
+                            <a href="register"><p>4 € / h</p></a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <p>Séminaire</p>
-                            <p>3 personnes minimum</p>
-                            <p>5 jours / semaine</p>
-                            <p>Pendant 6 semaines</p>
-                            <p>80 €</p>
+                            <a href="register"><p>Séminaire</p></a>
+                            <a href="register"><p>3 personnes minimum</p></a>
+                            <a href="register"><p>5 jours / semaine</p></a>
+                            <a href="register"><p>Pendant 6 semaines</p></a>
+                            <a href="register"><p>80 €</p></a>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <p>Le matériel requis:</p>
-                            <p>Un ordinateur, une tablette ou un smartphone</p>
-                            <p>Un casque avec micro</p>
-                            <p>Un compte Zoom ou Whereby</p>
+                            <a href="register"><p>Le matériel requis:</p></a>
+                            <a href="register"><p>Un ordinateur, une tablette ou un smartphone</p></a>
+                            <a href="register"><p>Un casque avec micro</p></a>
+                            <a href="register"><p>Un compte Zoom ou Whereby</p></a>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,21 @@
 
     p {
         text-align: center;
+        font-weight: bold;
         margin: auto;
+    }
+
+    a{
+        text-decoration: none;
+        color: #2c3e50;
+    }
+
+    div.card{
+        transition: transform 0.5s;
+    }
+
+    div.card:hover{
+        transform: scale(1.1);
     }
 
     .row-flex{

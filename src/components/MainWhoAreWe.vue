@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="bg-color-two col-md-6 nopadding">
-                <img class="pl-5 macbook" src="assets/images/macbook.jpg" alt="">
+                <img class="ml-5 macbook" src="assets/images/macbook.jpg" alt="">
             </div>
             <div class="col-md-6 bg-light">
                 <h2 class="mt-3 text-center">Qu'est ce que cela veut dire ?</h2>
@@ -38,5 +38,6 @@ export default {
     .macbook{
         width: 90%;
         height: auto;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     }
 </style>

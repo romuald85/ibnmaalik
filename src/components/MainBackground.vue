@@ -20,7 +20,7 @@ export default {
 <style scoped>
     .bg-image{
         background: linear-gradient(to bottom, #B6E3F1, #0001), 
-        url('/assets/images/desert.jpg') fixed;
+        url('/assets/images/landscape.jpg') fixed;
         background-repeat: no-repeat;
         background-size: cover;
         height: 300px;
