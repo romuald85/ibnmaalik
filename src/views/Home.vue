@@ -6,6 +6,7 @@
     <MainWhoAreWe/>
     <MainBackground/>
     <MainBooks/>
+    <MainContact/>
     <!-- <Footer/> -->
   </div>
 </template>
@@ -19,12 +20,18 @@ import MainPrograms from '@/components/MainPrograms.vue'
 import MainWhoAreWe from '@/components/MainWhoAreWe.vue'
 import MainBackground from '@/components/MainBackground.vue'
 import MainBooks from '@/components/MainBooks.vue'
+import MainContact from '@/components/MainContact.vue'
 import Footer from '@/components/Footer.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld, Navbar, MainHome, MainPrograms, MainWhoAreWe, MainBackground, MainBooks, Footer
+    HelloWorld, Navbar, MainHome, MainPrograms, MainWhoAreWe, MainBackground, MainBooks, MainContact, Footer
   }
 }
 </script>
+<style>
+  html, body{
+    height: 100%;
+  }
+</style>
