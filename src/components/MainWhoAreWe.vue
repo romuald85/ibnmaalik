@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="bg-color-two col-md-6 nopadding">
-                <img class="ml-5 macbook" src="assets/images/macbook.jpg" alt="">
+                <img class="ml-5 macbook" src="assets/images/book.png" alt="">
             </div>
             <div class="p-5 col-md-6 bg-light">
                 <h2 class="mt-3 text-center">Qu'est ce que cela veut dire ?</h2>
