@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="mt-5 col-md-4">
-                <h2 class="our-books">Nos support</h2>
+                <h2 class="our-books">Nos supports</h2>
             </div>
             <div class="mt-5 row-flex col-md-8">
                 <div class="m-1 card-group">

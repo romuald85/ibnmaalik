@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="" class="mt-5">
+                <form action="" class="mt-5 mb-5">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
@@ -35,7 +35,7 @@
                         <label for="message" class="form-label">Votre message</label>
                         <textarea class="form-control" id="message" rows="3" placeholder="Message"></textarea>
                     </div>
-                    <button type="submit" class="mt-2 mb-3 btn btn-block">Envoyer</button>
+                    <button type="submit" class="mt-5 mb-3 btn btn-block">Envoyer</button>
                 </form>
             </div>
         </div>

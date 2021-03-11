@@ -7,7 +7,7 @@
     <MainBackground/>
     <MainBooks/>
     <MainContact/>
-    <!-- <Footer/> -->
+    <Footer/>
   </div>
 </template>
 

@@ -52,7 +52,7 @@
       </nav>
       <div class="pt-5 pl-5">
         <br>
-        <h2 class="big-title pt-5 pl-5 text-start second-title">Insitut de langue arabe en ligne</h2>
+        <h2 class="big-title pt-5 pl-5 text-start second-title">Institut de langue arabe en ligne</h2>
       </div>
     </div>
   </header>
