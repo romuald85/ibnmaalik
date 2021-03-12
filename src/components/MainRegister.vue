@@ -1,34 +1,47 @@
 <template>
     <div class="container">
         <div class="row">
-            <p class="mt-5">Pour vous inscrire, c’est très simple il vous suffit de remplir le formulaire en bas de
-                page, après avoir pris connaissance des informations ci-dessous. Le paiement se fera avant chaque
-                session d’une durée de 4 semaines. Les retards et absences des enseignants donneront lieux à des séances
-                de rattrapage. Par contre aucune responsabilité du site ne sera engagée pour tout retard/absence de
-                l’élève. La session et le support sont deux choses différentes c’est à dire que le support est un des
-                tomes de Medine par exemple et la session durera 4 semaines. Ceci n’implique pas que vous finirez le
-                tome en 4 semaines loin de là car cette méthode, comprenant 4 tomes, est enseignée sur deux années
-                complètes dans l’institut de langue de l’université de Medine.</p>
-            <p class="mt-3 text-start">Le matériel requis:</p>
-            <ul>
-                <li class="text-start" v-for="equipment in equipments" v-bind:key="equipment.name">{{equipment.name}}
-                </li>
-            </ul>
-            <p class="mt-3">Le programme est très souple, vous ne vous engagez avec nous que pour la durée de 4
-                semaines. Vous avez ensuite la possibilité de vous arrêter ou de faire une pause d’une ou plusieurs
-                sessions tout en sachant que l’assiduité est un facteur important dans notre programme. Les cours seront
-                dispensés, selon votre préférence, de manière collective ou individuelle. Concernant les cours
-                collectifs, les classes seront limitées à 8 élèves maximum et 3 minimum et pour les moutounes comme
-                Alajourroumiyya 5 maximum et 3 minimum, ceci afin de garantir la qualité de l’enseignement. La fréquence
-                de ces cours sera de 3 jours par semaine, 2h par jour. Concernant les cours individuels la fréquence des
-                cours sera au choix de 4h ou 6h par semaine. Les tarifs des c ours sont disponibles dans la rubrique
-                Cours d’arabe littéraire. Les cours de tajwid sont de 2 jours par semaine, 1h par jour. Pour une demande
-                d’inscription, vous pouvez remplir le formulaire ci-dessous , nous vous répondrons dans les plus brefs
-                délais.</p>
+            <div class="col-md-6">
+                <p class="mt-5">Pour vous inscrire, c’est très simple il vous suffit de remplir le formulaire en bas de
+                    page, après avoir pris connaissance des informations ci-dessous. Le paiement se fera avant chaque
+                    session d’une durée de 4 semaines. Les retards et absences des enseignants donneront lieux à des
+                    séances
+                    de rattrapage. Par contre aucune responsabilité du site ne sera engagée pour tout retard/absence de
+                    l’élève. La session et le support sont deux choses différentes c’est à dire que le support est un
+                    des
+                    tomes de Medine par exemple et la session durera 4 semaines. Ceci n’implique pas que vous finirez le
+                    tome en 4 semaines loin de là car cette méthode, comprenant 4 tomes, est enseignée sur deux années
+                    complètes dans l’institut de langue de l’université de Medine.</p>
+                <p class="mt-3 text-start">Le matériel requis:</p>
+                <ul>
+                    <li class="text-start" v-for="equipment in equipments" v-bind:key="equipment.name">
+                        {{equipment.name}}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <p class="mt-3">Le programme est très souple, vous ne vous engagez avec nous que pour la durée de 4
+                    semaines. Vous avez ensuite la possibilité de vous arrêter ou de faire une pause d’une ou plusieurs
+                    sessions tout en sachant que l’assiduité est un facteur important dans notre programme. Les cours
+                    seront
+                    dispensés, selon votre préférence, de manière collective ou individuelle. Concernant les cours
+                    collectifs, les classes seront limitées à 8 élèves maximum et 3 minimum et pour les moutounes comme
+                    Alajourroumiyya 5 maximum et 3 minimum, ceci afin de garantir la qualité de l’enseignement. La
+                    fréquence
+                    de ces cours sera de 3 jours par semaine, 2h par jour. Concernant les cours individuels la fréquence
+                    des
+                    cours sera au choix de 4h ou 6h par semaine. Les tarifs des c ours sont disponibles dans la rubrique
+                    Cours d’arabe littéraire. Les cours de tajwid sont de 2 jours par semaine, 1h par jour. Pour une
+                    demande
+                    d’inscription, vous pouvez remplir le formulaire ci-dessous , nous vous répondrons dans les plus
+                    brefs
+                    délais.
+                </p>
+            </div>
         </div>
         <div class="row">
-            <div class="col">
-                <form action="">
+            <div class="col-md-6 mx-auto">
+                <form action="#" name="register">
                     <fieldset>
                         <legend>informations personnelles</legend>
                         <div class="row">
@@ -337,7 +350,7 @@
                             </select>
                         </div>
                     </fieldset>
-                    <fieldset>
+                    <!-- <fieldset>
                         <legend>Choix de la session de cours</legend>
                         <div class="row">
                             <div class="col-md-4">
@@ -596,7 +609,8 @@
                             J'ai lu et accepte<span><a href="#"> les conditions générales</a></span>
                         </label>
                     </div>
-                    <button type="submit" class="mt-2 mb-3 btn btn-block">Envoyer</button>
+                    <p id="erreur" style="color: red;"></p> -->
+                    <button type="submit" class="mt-2 mb-3 btn btn-block bouton-form">Envoyer</button>
                 </form>
             </div>
         </div>
@@ -617,11 +631,60 @@
                     },
                 ]
             }
+        },
+        mounted() {
+            // document.forms['register'].addEventListener('submit', (e) => {
+
+            //     let erreur
+
+            //     const inputs = document.querySelectorAll('input, select')
+            //     const btn = document.querySelector('.bouton-form')
+
+
+            //     for(let i = 0; i < inputs.length; i++){
+            //         if(!inputs[i].value){
+            //             e.prevenDefault
+            //             erreur = 'Veuillez renseigner tout les champs !'
+            //             btn.disabled = true
+            //             btn.style.cursor = 'not-allowed'   
+            //         }else{
+            //             btn.disabled = false
+            //             btn.style.cursor = 'pointer'
+            //         }
+            //     }
+
+
+            //     if(erreur){
+            //         e.prevenDefault
+            //         document.getElementById('erreur').innerHTML = erreur
+            //         return false
+            //     }else{
+            //         alert('Formulaire envoyé')
+            //     }
+            // })
+
+            const btn = document.querySelector('.bouton-form')
+            const inputs = document.querySelectorAll('input, select')
+            btn.disabled = true
+            btn.style.cursor = 'not-allowed'
+
+            document.forms['register'].addEventListener('input', () => {
+                for (let i = 0; i < document.querySelectorAll('input').length; i++) {
+                    if (inputs[i].value === "") {
+                        document.querySelector('.bouton-form').disabled = true
+                        document.querySelector('.bouton-form').style.cursor = 'not-allowed'
+                    }else if(inputs[i].value.length > 0){
+                        document.querySelector('.bouton-form').disabled = false
+                        document.querySelector('.bouton-form').style.cursor = 'pointer'
+                    }
+                }
+            })
+
         }
     }
 </script>
 <style scoped>
-    button{
+    button {
         background: #8CD9F1;
         color: #2c3e50;
     }
