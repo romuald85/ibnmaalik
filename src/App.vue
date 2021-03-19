@@ -20,6 +20,11 @@
   *{
     box-sizing: border-box;
   }
+
+  html, body{
+    height: 100%;
+  }
+
   #app {
     font-family: Montserrat, Avenir, Helvetica, Arial, sans-serif;
     font-size: 18px;

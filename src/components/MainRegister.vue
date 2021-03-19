@@ -41,20 +41,28 @@
         </div>
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <form action="#" name="register">
+                <form action="#" name="register" v-on:submit="checkForm">
                     <fieldset>
                         <legend>informations personnelles</legend>
+                        <p v-if="errors.length">
+                            <b>Veuillez corriger l'(les) erreur(s) suivante: </b>
+                            <ul>
+                                <li v-for="error in errors" v-bind:key="error">{{error}}</li>
+                            </ul>
+                        </p>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="lastname" class="text-start form-label">Votre nom</label>
-                                    <input type="text" class="text-start form-control" id="lastname" placeholder="Nom">
+                                    <input type="text" v-model="lastname" class="input-field text-start form-control"
+                                        id="lastname" placeholder="Nom">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="firstname" class="form-label">Votre prénom</label>
-                                    <input type="text" class="form-control" id="firstname" placeholder="Prénom">
+                                    <input type="text" v-model="firstname" class="input-field form-control"
+                                        id="firstname" placeholder="Prénom">
                                 </div>
                             </div>
                         </div>
@@ -62,13 +70,15 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="age" class="form-label">Votre âge</label>
-                                    <input type="number" class="form-control" id="age" placeholder="Âge" min="0">
+                                    <input type="number" v-model="age" class="input-field form-control" id="age"
+                                        placeholder="Âge" min="0">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Votre téléphone</label>
-                                    <input type="tel" class="form-control" id="phone" placeholder="Téléphone">
+                                    <input type="tel" v-model="phone" class="input-field form-control" id="phone"
+                                        placeholder="Téléphone">
                                 </div>
                             </div>
                         </div>
@@ -76,14 +86,15 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Votre email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                    <input type="email" v-model="email" class="input-field form-control" id="email"
+                                        placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="verifemail" class="form-label">Vérification email</label>
-                                    <input type="email" class="form-control" id="verifemail"
-                                        placeholder="Vérification email">
+                                    <input type="email" v-model="verifemail" class="input-field form-control"
+                                        id="verifemail" placeholder="Vérification email">
                                 </div>
                             </div>
                         </div>
@@ -629,7 +640,44 @@
                     {
                         name: 'Un compte Zoom'
                     },
-                ]
+                ],
+                errors: [],
+                lastname: null,
+                firstname: null,
+                age: null,
+                phone: null,
+                email: null,
+                verifemail: null
+            }
+        },
+        methods: {
+            checkForm: function (e) {
+                if (this.lastname && this.firstname && this.age && this.phone && this.email && this.verifemail) {
+                    return true
+                }
+
+                this.errors = []
+
+                if (!this.lastname) {
+                    this.errors.push('Le nom est requis')
+                }
+                if (!this.firstname) {
+                    this.errors.push('Le prénom est requis')
+                }
+                if (!this.age) {
+                    this.errors.push('L\'âge est requis')
+                }
+                if (!this.phone) {
+                    this.errors.push('Le téléphone est requis')
+                }
+                if (!this.email) {
+                    this.errors.push('L\'email est requis')
+                }
+                if (!this.verifemail) {
+                    this.errors.push('La vérification de l\'email est requise')
+                }
+
+                e.prevenDefault()
             }
         },
         mounted() {
@@ -663,20 +711,33 @@
             //     }
             // })
 
-            const btn = document.querySelector('.bouton-form')
-            const inputs = document.querySelectorAll('input, select')
-            btn.disabled = true
-            btn.style.cursor = 'not-allowed'
+            // document.forms['register'].addEventListener('input', () => {
+            //     let inputs = document.querySelectorAll('.input-field')
+            //     inputs.forEach(input => {
+            //         if (!input.value) {
+            //             document.querySelector('.bouton-form').disabled = true
+            //         } else {
+            //             document.querySelector('.bouton-form').disabled = false
+            //         }
+            //     });
+            // })
+
 
             document.forms['register'].addEventListener('input', () => {
-                for (let i = 0; i < document.querySelectorAll('input').length; i++) {
-                    if (inputs[i].value === "") {
-                        document.querySelector('.bouton-form').disabled = true
-                        document.querySelector('.bouton-form').style.cursor = 'not-allowed'
-                    }else if(inputs[i].value.length > 0){
-                        document.querySelector('.bouton-form').disabled = false
-                        document.querySelector('.bouton-form').style.cursor = 'pointer'
-                    }
+                let lastname = document.getElementById('lastname')
+                let firstname = document.getElementById('firstname')
+                let age = document.getElementById('age')
+                let phone = document.getElementById('phone')
+                let email = document.getElementById('email')
+                let verifemail = document.getElementById('verifemail')
+
+                if (!lastname.value && !firstname.value && !age.value && !phone.value && !email.value && !
+                    verifemail.value) {
+                    document.querySelector('.bouton-form').disabled = true
+                    document.querySelector('.bouton-form').style.cursor = 'not-allowed'
+                } else {
+                    document.querySelector('.bouton-form').disabled = false
+                    document.querySelector('.bouton-form').style.cursor = 'pointer'
                 }
             })
 
