@@ -494,9 +494,6 @@
                     this.errors.push('Veuillez accepter les conditions générales')
                 }
             },
-            isRequired(value) {
-                return value ? true : 'Ce champs est requis !'
-            }
         }
     }
 </script>
