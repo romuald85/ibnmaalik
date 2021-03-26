@@ -1,4 +1,5 @@
 <template>
+
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -19,6 +20,7 @@
                     </li>
                 </ul>
             </div>
+
             <div class="col-md-6">
                 <p class="mt-3">Le programme est très souple, vous ne vous engagez avec nous que pour la durée de 4
                     semaines. Vous avez ensuite la possibilité de vous arrêter ou de faire une pause d’une ou plusieurs
@@ -41,13 +43,13 @@
         </div>
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <form action="#" name="register" v-on:submit="checkForm">
+                <form action="#" name="register" v-on:submit.prevent="checkForm">
                     <fieldset>
-                        <legend>informations personnelles</legend>
+                        <legend>Informations personnelles</legend>
                         <p v-if="errors.length">
                             <b>Veuillez corriger l'(les) erreur(s) suivante: </b>
                             <ul>
-                                <li v-for="error in errors" v-bind:key="error">{{error}}</li>
+                                <li style="color: red;" v-for="error in errors" v-bind:key="error">{{error}}</li>
                             </ul>
                         </p>
                         <div class="row">
@@ -361,250 +363,60 @@
                             </select>
                         </div>
                     </fieldset>
-                    <!-- <fieldset>
-                        <legend>Choix de la session de cours</legend>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <p class="mt-3">Support:</p>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Nour al bayan
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Tome 1 de Médine
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Tome 2 de Médine
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Tome 3 de Médine
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Tome 4 de Médine
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Alajourroumiyya
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Tajwid
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Coran
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Vocabulaire débutants
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Qatr al nada
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        Alfiya ibn Maalik
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mt-3">
-                                    <p>Type de session:</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Individuel
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Collectif
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="mt-3">
-                                    <p>Fréquence des cours:</p>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            2h / semaine
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            4h / semaine
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            6h / semaine
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
                     <fieldset>
                         <div class="row">
-                            <div class="col-md-4">
-                                <legend>Choix du professeur</legend>
-                                <div class="mt-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Arabophone / Francophone
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Arabophone uniquement
-                                        </label>
-                                    </div>
-                                </div>
+                            <legend>Choix de la session de cours</legend>
+                            <div class="col-md-6">
+                                <label>Supports: </label>
+                                <select class="form-select" aria-label="Default select example" name="support"
+                                    id="support">
+                                    <option selected value="tome1">Tome 1 de Médine</option>
+                                    <option value="tome2">Tome 2 de Médine</option>
+                                    <option value="tome3">Tome 3 de Médine</option>
+                                    <option value="tome4">Tome 4 de Médine</option>
+                                    <option value="alajouroumiyya">Alajouroumiyya</option>
+                                    <option value="qatr">Qatr al nada</option>
+                                    <option value="alfiyya">Alfiyya ibn maalik</option>
+                                    <option value="vocabulaire">Vocabulaire débutants</option>
+                                    <option value="coran">Coran</option>
+                                    <option value="tajwid">Tajwid</option>
+                                </select>
                             </div>
-                            <div class="col-md-4">
-                                <legend>Vos jours de disponibilités</legend>
-                                <div class="mt-3">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckIndeterminate">
-                                        <label class="form-check-label" for="flexCheckIndeterminate">
-                                            Lundi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckIndeterminate">
-                                        <label class="form-check-label" for="flexCheckIndeterminate">
-                                            Mardi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckIndeterminate">
-                                        <label class="form-check-label" for="flexCheckIndeterminate">
-                                            Mercredi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckIndeterminate">
-                                        <label class="form-check-label" for="flexCheckIndeterminate">
-                                            Jeudi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckIndeterminate">
-                                        <label class="form-check-label" for="flexCheckIndeterminate">
-                                            Vendredi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckIndeterminate">
-                                        <label class="form-check-label" for="flexCheckIndeterminate">
-                                            Samedi
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckIndeterminate">
-                                        <label class="form-check-label" for="flexCheckIndeterminate">
-                                            Dimanche
-                                        </label>
-                                    </div>
-                                </div>
+                            <div class="col-md-6">
+                                <label>Type de session</label>
+                                <select class="form-select" aria-label="Default select example" name="type-session"
+                                    id="type-session">
+                                    <option selected value="individuelle">individuelle</option>
+                                    <option value="collective">Collective</option>
+                                </select>
                             </div>
-                            <div class="col-md-4">
-                                <legend>Heures de disponibilités</legend>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        7h 11h
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        11h 15h
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        15h 19h
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckIndeterminate">
-                                    <label class="form-check-label" for="flexCheckIndeterminate">
-                                        19h 23h
-                                    </label>
-                                </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="mt-3">Fréquence des cours</label>
+                                <select class="form-select" aria-label="Default select example" name="frequence" id="frequence">
+                                    <option selected value="1">1 heure</option>
+                                    <option value="2">2 heures</option>
+                                    <option value="3">3 heures</option>
+                                    <option value="4">4 heures</option>
+                                    <option value="5">5 heures</option>
+                                    <option value="6">6 heures</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="mt-3">Choix du professeur</label>
+                                <select class="form-select" aria-label="Default select example" name="frequence" id="frequence">
+                                    <option selected value="1">Arabophone / francophone</option>
+                                    <option value="2">Uniquement arabophone</option>
+                                </select>
                             </div>
                         </div>
                     </fieldset>
                     <div class="row">
                         <div class="col">
-                            <legend>Comment avez-vous connu notre site ?</legend>
+                            <legend class="mt-3">Comment avez-vous connu notre site ?</legend>
                             <select class="form-select" aria-label="Default select example">
-                                <option selected>Séléctionnez votre réponse</option>
-                                <option value="1">Famille / Amis</option>
+                                <option selected value="1">Famille / Amis</option>
                                 <option value="2">Facebook</option>
                                 <option value="3">Twitter</option>
                                 <option value="3">Instagram</option>
@@ -615,12 +427,12 @@
                         </div>
                     </div>
                     <div class="mt-3 form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
-                        <label class="form-check-label" for="flexCheckIndeterminate">
+                        <input class="form-check-input" type="checkbox" v-model="conditions" value="" id="flexCheckIndeterminate">
+                        <label class="conditions form-check-label" for="flexCheckIndeterminate">
                             J'ai lu et accepte<span><a href="#"> les conditions générales</a></span>
                         </label>
                     </div>
-                    <p id="erreur" style="color: red;"></p> -->
+                    <p id="erreur" style="color: red;"></p>
                     <button type="submit" class="mt-2 mb-3 btn btn-block bouton-form">Envoyer</button>
                 </form>
             </div>
@@ -647,12 +459,14 @@
                 age: null,
                 phone: null,
                 email: null,
-                verifemail: null
+                verifemail: null,
+                conditions: null
             }
         },
         methods: {
             checkForm: function (e) {
-                if (this.lastname && this.firstname && this.age && this.phone && this.email && this.verifemail) {
+                if (this.lastname && this.firstname && this.age && this.phone && this.email && this.verifemail &&
+                    this.conditions) {
                     return true
                 }
 
@@ -676,71 +490,13 @@
                 if (!this.verifemail) {
                     this.errors.push('La vérification de l\'email est requise')
                 }
-
-                e.prevenDefault()
-            }
-        },
-        mounted() {
-            // document.forms['register'].addEventListener('submit', (e) => {
-
-            //     let erreur
-
-            //     const inputs = document.querySelectorAll('input, select')
-            //     const btn = document.querySelector('.bouton-form')
-
-
-            //     for(let i = 0; i < inputs.length; i++){
-            //         if(!inputs[i].value){
-            //             e.prevenDefault
-            //             erreur = 'Veuillez renseigner tout les champs !'
-            //             btn.disabled = true
-            //             btn.style.cursor = 'not-allowed'   
-            //         }else{
-            //             btn.disabled = false
-            //             btn.style.cursor = 'pointer'
-            //         }
-            //     }
-
-
-            //     if(erreur){
-            //         e.prevenDefault
-            //         document.getElementById('erreur').innerHTML = erreur
-            //         return false
-            //     }else{
-            //         alert('Formulaire envoyé')
-            //     }
-            // })
-
-            // document.forms['register'].addEventListener('input', () => {
-            //     let inputs = document.querySelectorAll('.input-field')
-            //     inputs.forEach(input => {
-            //         if (!input.value) {
-            //             document.querySelector('.bouton-form').disabled = true
-            //         } else {
-            //             document.querySelector('.bouton-form').disabled = false
-            //         }
-            //     });
-            // })
-
-
-            document.forms['register'].addEventListener('input', () => {
-                let lastname = document.getElementById('lastname')
-                let firstname = document.getElementById('firstname')
-                let age = document.getElementById('age')
-                let phone = document.getElementById('phone')
-                let email = document.getElementById('email')
-                let verifemail = document.getElementById('verifemail')
-
-                if (!lastname.value && !firstname.value && !age.value && !phone.value && !email.value && !
-                    verifemail.value) {
-                    document.querySelector('.bouton-form').disabled = true
-                    document.querySelector('.bouton-form').style.cursor = 'not-allowed'
-                } else {
-                    document.querySelector('.bouton-form').disabled = false
-                    document.querySelector('.bouton-form').style.cursor = 'pointer'
+                if (!this.conditions) {
+                    this.errors.push('Veuillez accepter les conditions générales')
                 }
-            })
-
+            },
+            isRequired(value) {
+                return value ? true : 'Ce champs est requis !'
+            }
         }
     }
 </script>
