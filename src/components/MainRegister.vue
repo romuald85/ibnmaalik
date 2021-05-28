@@ -43,7 +43,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <form action="#" name="register" v-on:submit.prevent="checkForm">
+                <form name="register" v-on:submit.prevent="checkForm">
                     <fieldset>
                         <legend>Informations personnelles</legend>
                         <p v-if="errors.length">
@@ -79,7 +79,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Votre téléphone</label>
-                                    <input type="tel" v-model="phone" class="input-field form-control" id="phone"
+                                    <input type="text" v-model="phone" class="input-field form-control" id="phone"
                                         placeholder="Téléphone">
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="country" class="form-label">Votre pays</label>
-                            <select id="country" name="country" class="form-control">
+                            <select id="country" name="country" class="form-control" v-model="country">
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Åland Islands">Åland Islands</option>
                                 <option value="Albania">Albania</option>
@@ -369,7 +369,7 @@
                             <div class="col-md-6">
                                 <label>Supports: </label>
                                 <select class="form-select" aria-label="Default select example" name="support"
-                                    id="support">
+                                    id="support" v-model="supports">
                                     <option selected value="tome1">Tome 1 de Médine</option>
                                     <option value="tome2">Tome 2 de Médine</option>
                                     <option value="tome3">Tome 3 de Médine</option>
@@ -385,7 +385,7 @@
                             <div class="col-md-6">
                                 <label>Type de session</label>
                                 <select class="form-select" aria-label="Default select example" name="type-session"
-                                    id="type-session">
+                                    id="type-session" v-model="typeSession">
                                     <option selected value="individuelle">individuelle</option>
                                     <option value="collective">Collective</option>
                                 </select>
@@ -394,7 +394,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="mt-3">Fréquence des cours</label>
-                                <select class="form-select" aria-label="Default select example" name="frequence" id="frequence">
+                                <select class="form-select" aria-label="Default select example" name="frequence" id="frequence" v-model="frequence">
                                     <option selected value="1">1 heure</option>
                                     <option value="2">2 heures</option>
                                     <option value="3">3 heures</option>
@@ -405,7 +405,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="mt-3">Choix du professeur</label>
-                                <select class="form-select" aria-label="Default select example" name="frequence" id="frequence">
+                                <select class="form-select" aria-label="Default select example" name="choixProf" id="choixProf" v-model="choixProf">
                                     <option selected value="1">Arabophone / francophone</option>
                                     <option value="2">Uniquement arabophone</option>
                                 </select>
@@ -415,7 +415,7 @@
                     <div class="row">
                         <div class="col">
                             <legend class="mt-3">Comment avez-vous connu notre site ?</legend>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" v-model="commentConnu">
                                 <option selected value="1">Famille / Amis</option>
                                 <option value="2">Facebook</option>
                                 <option value="3">Twitter</option>
@@ -460,12 +460,45 @@
                 phone: null,
                 email: null,
                 verifemail: null,
-                conditions: null
+                country: null,
+                supports: null,
+                typeSession: null,
+                frequence: null,
+                choixProf: null,
+                commentConnu: null,
+                conditions: null,
+                output: ''
             }
         },
         methods: {
             checkForm: function (e) {
-                if (this.lastname && this.firstname && this.age && this.phone && this.email && this.verifemail &&
+                e.preventDefault()
+
+                let currentObject = this
+                axios.post('https://localhost:8000/api/post', {
+                    lastname: this.lastname,
+                    firstname: this.firstname,
+                    age: this.age,
+                    phone: this.phone,
+                    email: this.email,
+                    verifemail: this.verifemail,
+                    country: this.country,
+                    supports: this.supports,
+                    typeSession: this.typeSession,
+                    frequence: this.frequence,
+                    choixProf: this.choixProf,
+                    commentConnu: this.commentConnu,
+                    conditions: this.conditions
+                })
+                .then((response) => {
+                    console.log(response.data)
+                    currentObject.output = response.data
+                })
+                .catch((error) => {
+                    currentObject.output = error
+                })
+
+                if (this.lastname && this.firstname && this.age && this.phone && this.email && this.verifemail && this.country && this.supports && this.typeSession && this.frequence && this.choixProf && this.commentConnu &&
                     this.conditions) {
                     return true
                 }
@@ -489,6 +522,24 @@
                 }
                 if (!this.verifemail) {
                     this.errors.push('La vérification de l\'email est requise')
+                }
+                if (!this.country) {
+                    this.errors.push('Le pays est requis')
+                }
+                if (!this.supports) {
+                    this.errors.push('La support est requis')
+                }
+                if (!this.typeSession) {
+                    this.errors.push('Le type de la session est requis')
+                }
+                if (!this.frequence) {
+                    this.errors.push('La fréquence de cours est requise')
+                }
+                if (!this.choixProf) {
+                    this.errors.push('Le choix du professeur est requis')
+                }
+                if (!this.commentConnu) {
+                    this.errors.push('Comment avez vous connu notre institut est requis')
                 }
                 if (!this.conditions) {
                     this.errors.push('Veuillez accepter les conditions générales')
