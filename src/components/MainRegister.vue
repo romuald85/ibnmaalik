@@ -85,20 +85,18 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Votre email</label>
-                                    <input type="email" v-model="email" class="input-field form-control" id="email"
-                                        placeholder="Email">
-                                </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Votre email</label>
+                                <input type="email" v-model="email" class="input-field form-control" id="email"
+                                    placeholder="Email">
                             </div>
-                            <div class="col-md-6">
+                            <!-- <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="verifemail" class="form-label">Vérification email</label>
                                     <input type="email" v-model="verifemail" class="input-field form-control"
                                         id="verifemail" placeholder="Vérification email">
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="mb-3">
                             <label for="country" class="form-label">Votre pays</label>
@@ -369,7 +367,7 @@
                             <div class="col-md-6">
                                 <label>Supports: </label>
                                 <select class="form-select" aria-label="Default select example" name="support"
-                                    id="support" v-model="supports">
+                                    id="support" v-model="support">
                                     <option selected value="tome1">Tome 1 de Médine</option>
                                     <option value="tome2">Tome 2 de Médine</option>
                                     <option value="tome3">Tome 3 de Médine</option>
@@ -384,8 +382,8 @@
                             </div>
                             <div class="col-md-6">
                                 <label>Type de session</label>
-                                <select class="form-select" aria-label="Default select example" name="type-session"
-                                    id="type-session" v-model="typeSession">
+                                <select class="form-select" aria-label="Default select example" name="typeOfSession"
+                                    id="typeOfSession" v-model="typeOfSession">
                                     <option selected value="individuelle">individuelle</option>
                                     <option value="collective">Collective</option>
                                 </select>
@@ -394,7 +392,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="mt-3">Fréquence des cours</label>
-                                <select class="form-select" aria-label="Default select example" name="frequence" id="frequence" v-model="frequence">
+                                <select class="form-select" aria-label="Default select example" name="hoursPerWeek" id="hoursPerWeek" v-model="hoursPerWeek">
                                     <option selected value="1">1 heure</option>
                                     <option value="2">2 heures</option>
                                     <option value="3">3 heures</option>
@@ -405,7 +403,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="mt-3">Choix du professeur</label>
-                                <select class="form-select" aria-label="Default select example" name="choixProf" id="choixProf" v-model="choixProf">
+                                <select class="form-select" aria-label="Default select example" name="prof" id="prof" v-model="prof">
                                     <option selected value="1">Arabophone / francophone</option>
                                     <option value="2">Uniquement arabophone</option>
                                 </select>
@@ -415,7 +413,7 @@
                     <div class="row">
                         <div class="col">
                             <legend class="mt-3">Comment avez-vous connu notre site ?</legend>
-                            <select class="form-select" aria-label="Default select example" v-model="commentConnu">
+                            <select class="form-select" aria-label="Default select example" name="findOurWebsite" id="findOurWebsite" v-model="findOurWebsite">
                                 <option selected value="1">Famille / Amis</option>
                                 <option value="2">Facebook</option>
                                 <option value="3">Twitter</option>
@@ -461,11 +459,11 @@
                 email: null,
                 verifemail: null,
                 country: null,
-                supports: null,
-                typeSession: null,
-                frequence: null,
-                choixProf: null,
-                commentConnu: null,
+                support: null,
+                typeOfSession: null,
+                hoursPerWeek: null,
+                prof: null,
+                findOurWebsite: null,
                 conditions: null,
                 output: ''
             }
@@ -475,7 +473,7 @@
                 e.preventDefault()
 
                 let currentObject = this
-                axios.post('https://localhost:8000/api/post', {
+                axios.post('https://localhost:8000/api/students', {
                     lastname: this.lastname,
                     firstname: this.firstname,
                     age: this.age,
@@ -483,11 +481,11 @@
                     email: this.email,
                     verifemail: this.verifemail,
                     country: this.country,
-                    supports: this.supports,
-                    typeSession: this.typeSession,
-                    frequence: this.frequence,
-                    choixProf: this.choixProf,
-                    commentConnu: this.commentConnu,
+                    support: this.support,
+                    typeOfSession: this.typeOfSession,
+                    hoursPerWeek: this.hoursPerWeek,
+                    prof: this.prof,
+                    findOurWebsite: this.findOurWebsite,
                     conditions: this.conditions
                 })
                 .then((response) => {
@@ -498,7 +496,7 @@
                     currentObject.output = error
                 })
 
-                if (this.lastname && this.firstname && this.age && this.phone && this.email && this.verifemail && this.country && this.supports && this.typeSession && this.frequence && this.choixProf && this.commentConnu &&
+                if (this.lastname && this.firstname && this.age && this.phone && this.email && this.verifemail && this.country && this.support && this.typeOfSession && this.hoursPerWeek && this.prof && this.findOurWebsite &&
                     this.conditions) {
                     return true
                 }
@@ -526,19 +524,19 @@
                 if (!this.country) {
                     this.errors.push('Le pays est requis')
                 }
-                if (!this.supports) {
+                if (!this.support) {
                     this.errors.push('La support est requis')
                 }
-                if (!this.typeSession) {
+                if (!this.typeOfSession) {
                     this.errors.push('Le type de la session est requis')
                 }
-                if (!this.frequence) {
+                if (!this.hoursPerWeek) {
                     this.errors.push('La fréquence de cours est requise')
                 }
-                if (!this.choixProf) {
+                if (!this.prof) {
                     this.errors.push('Le choix du professeur est requis')
                 }
-                if (!this.commentConnu) {
+                if (!this.findOurWebsite) {
                     this.errors.push('Comment avez vous connu notre institut est requis')
                 }
                 if (!this.conditions) {
