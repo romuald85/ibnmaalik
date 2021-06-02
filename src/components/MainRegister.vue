@@ -425,8 +425,8 @@
                         </div>
                     </div>
                     <div class="mt-3 form-check">
-                        <input class="form-check-input" type="checkbox" v-model="conditions" value="" id="flexCheckIndeterminate">
-                        <label class="conditions form-check-label" for="flexCheckIndeterminate">
+                        <input class="form-check-input" type="checkbox" v-model="terms" name="terms" id="terms" value="true" required>
+                        <label class="conditions form-check-label" for="terms">
                             J'ai lu et accepte<span><a href="#"> les conditions générales</a></span>
                         </label>
                     </div>
@@ -464,7 +464,7 @@
                 hoursPerWeek: null,
                 prof: null,
                 findOurWebsite: null,
-                conditions: null,
+                terms: null,
                 output: ''
             }
         },
@@ -486,7 +486,7 @@
                     hoursPerWeek: this.hoursPerWeek,
                     prof: this.prof,
                     findOurWebsite: this.findOurWebsite,
-                    conditions: this.conditions
+                    terms: this.terms
                 })
                 .then((response) => {
                     console.log(response.data)
@@ -497,7 +497,7 @@
                 })
 
                 if (this.lastname && this.firstname && this.age && this.phone && this.email && this.verifemail && this.country && this.support && this.typeOfSession && this.hoursPerWeek && this.prof && this.findOurWebsite &&
-                    this.conditions) {
+                    this.terms) {
                     return true
                 }
 
@@ -539,7 +539,7 @@
                 if (!this.findOurWebsite) {
                     this.errors.push('Comment avez vous connu notre institut est requis')
                 }
-                if (!this.conditions) {
+                if (!this.terms) {
                     this.errors.push('Veuillez accepter les conditions générales')
                 }
             },

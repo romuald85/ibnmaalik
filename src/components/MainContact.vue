@@ -60,7 +60,25 @@ export default {
         }
     },
     methods: {
-        checkForm() {
+        checkForm: function (e) {
+            e.preventDefault()
+
+            let currentObject = this
+            axios.post('https://localhost:8000/api/contacts', {
+                lastname: this.lastname,
+                firstname: this.firstname,
+                email: this.email,
+                phone: this.phone,
+                message: this.message,
+            })
+            .then((response) => {
+                console.log(response.data)
+                currentObject.output = response.data
+            })
+            .catch((error) => {
+                    currentObject.output = error
+            })
+
             if(this.lastname && this.firstname && this.email && this.phone && this.message){
                 return true
             }
