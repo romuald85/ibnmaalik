@@ -404,8 +404,8 @@
                             <div class="col-md-6">
                                 <label class="mt-3">Choix du professeur</label>
                                 <select class="form-select" aria-label="Default select example" name="prof" id="prof" v-model="prof">
-                                    <option selected value="1">Arabophone / francophone</option>
-                                    <option value="2">Uniquement arabophone</option>
+                                    <option selected value="Arabophone/francophone">Arabophone/francophone</option>
+                                    <option value="Uniquement arabophone">Uniquement arabophone</option>
                                 </select>
                             </div>
                         </div>
@@ -414,13 +414,13 @@
                         <div class="col">
                             <legend class="mt-3">Comment avez-vous connu notre site ?</legend>
                             <select class="form-select" aria-label="Default select example" name="findOurWebsite" id="findOurWebsite" v-model="findOurWebsite">
-                                <option selected value="1">Famille / Amis</option>
-                                <option value="2">Facebook</option>
-                                <option value="3">Twitter</option>
-                                <option value="3">Instagram</option>
-                                <option value="3">Moteur de recherche (Google, Bing, Yahoo)</option>
-                                <option value="3">Via un autre site internet</option>
-                                <option value="3">Autre</option>
+                                <option selected value="Famille/Amis">Famille/Amis</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Twitter">Twitter</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Moteur de recherche (Google, Bing, Yahoo)">Moteur de recherche (Google, Bing, Yahoo)</option>
+                                <option value="Via un autre site internet">Via un autre site internet</option>
+                                <option value="Autre">Autre</option>
                             </select>
                         </div>
                     </div>
