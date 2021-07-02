@@ -43,7 +43,7 @@
         </div>
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <form name="register" v-on:submit.prevent="checkForm">
+                <form name="register" v-on:submit.prevent="checkForm" class="needs-validation" novalidate>
                     <fieldset>
                         <legend>Informations personnelles</legend>
                         <p v-if="errors.length">
@@ -56,15 +56,17 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="lastname" class="text-start form-label">Votre nom</label>
-                                    <input type="text" v-model="lastname" class="input-field text-start form-control"
+                                    <input type="text" v-model="lastname" class="input-field text-start form-control" v-bind:class="errors.lastname ? 'is-invalid' : ''"
                                         id="lastname" placeholder="Nom">
+                                        <p v-bind:key="errors.lastname" class="invalid-feedback">{{errors.lastname}}</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="firstname" class="form-label">Votre prénom</label>
-                                    <input type="text" v-model="firstname" class="input-field form-control"
+                                    <input type="text" v-model="firstname" class="input-field form-control" v-bind:class="errors.firstname ? 'is-invalid' : ''"
                                         id="firstname" placeholder="Prénom">
+                                        <p v-bind:key="errors.firstname" class="invalid-feedback">{{errors.firstname}}</p>
                                 </div>
                             </div>
                         </div>
@@ -72,23 +74,26 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="age" class="form-label">Votre âge</label>
-                                    <input type="number" v-model="age" class="input-field form-control" id="age"
+                                    <input type="number" v-model="age" class="input-field form-control" id="age" v-bind:class="errors.age ? 'is-invalid' : ''"
                                         placeholder="Âge" min="0">
+                                        <p v-bind:key="errors.age" class="invalid-feedback">{{errors.age}}</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Votre téléphone</label>
-                                    <input type="text" v-model="phone" class="input-field form-control" id="phone"
+                                    <input type="text" v-model="phone" class="input-field form-control" id="phone" v-bind:class="errors.phone ? 'is-invalid' : ''"
                                         placeholder="Téléphone">
+                                        <p v-bind:key="errors.phone" class="invalid-feedback">{{errors.phone}}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Votre email</label>
-                                <input type="email" v-model="email" class="input-field form-control" id="email"
+                                <input type="email" v-model="email" class="input-field form-control" id="email" v-bind:class="errors.email ? 'is-invalid' : ''"
                                     placeholder="Email">
+                                    <p v-bind:key="errors.email" class="invalid-feedback">{{errors.email}}</p>
                             </div>
                             <!-- <div class="col-md-6">
                                 <div class="mb-3">
@@ -100,7 +105,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="country" class="form-label">Votre pays</label>
-                            <select id="country" name="country" class="form-control" v-model="country">
+                            <select id="country" name="country" class="form-control" v-model="country" v-bind:class="errors.country ? 'is-invalid' : ''">
                                 <option value="Afghanistan">Afghanistan</option>
                                 <option value="Åland Islands">Åland Islands</option>
                                 <option value="Albania">Albania</option>
@@ -359,6 +364,7 @@
                                 <option value="Zambia">Zambia</option>
                                 <option value="Zimbabwe">Zimbabwe</option>
                             </select>
+                            <p v-bind:key="errors.country" class="invalid-feedback">{{errors.country}}</p>
                         </div>
                     </fieldset>
                     <fieldset>
@@ -366,7 +372,7 @@
                             <legend>Choix de la session de cours</legend>
                             <div class="col-md-6">
                                 <label>Supports: </label>
-                                <select class="form-select" aria-label="Default select example" name="support"
+                                <select class="form-select" aria-label="Default select example" name="support" v-bind:class="errors.support ? 'is-invalid' : ''"
                                     id="support" v-model="support">
                                     <option selected value="tome1">Tome 1 de Médine</option>
                                     <option value="tome2">Tome 2 de Médine</option>
@@ -379,20 +385,22 @@
                                     <option value="coran">Coran</option>
                                     <option value="tajwid">Tajwid</option>
                                 </select>
+                                <p v-bind:key="errors.support" class="invalid-feedback">{{errors.support}}</p>
                             </div>
                             <div class="col-md-6">
                                 <label>Type de session</label>
-                                <select class="form-select" aria-label="Default select example" name="typeOfSession"
+                                <select class="form-select" aria-label="Default select example" name="typeOfSession" v-bind:class="errors.typeOfSession ? 'is-invalid' : ''"
                                     id="typeOfSession" v-model="typeOfSession">
                                     <option selected value="individuelle">individuelle</option>
                                     <option value="collective">Collective</option>
                                 </select>
+                                <p v-bind:key="errors.typeOfSession" class="invalid-feedback">{{errors.typeOfSession}}</p>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6">
                                 <label class="mt-3">Fréquence des cours</label>
-                                <select class="form-select" aria-label="Default select example" name="hoursPerWeek" id="hoursPerWeek" v-model="hoursPerWeek">
+                                <select class="form-select" aria-label="Default select example" name="hoursPerWeek" id="hoursPerWeek" v-model="hoursPerWeek" v-bind:class="errors.hoursPerWeek ? 'is-invalid' : ''">
                                     <option selected value="1">1 heure</option>
                                     <option value="2">2 heures</option>
                                     <option value="3">3 heures</option>
@@ -400,20 +408,22 @@
                                     <option value="5">5 heures</option>
                                     <option value="6">6 heures</option>
                                 </select>
+                                <p v-bind:key="errors.hoursPerWeek" class="invalid-feedback">{{errors.hoursPerWeek}}</p>
                             </div>
                             <div class="col-md-6">
                                 <label class="mt-3">Choix du professeur</label>
-                                <select class="form-select" aria-label="Default select example" name="prof" id="prof" v-model="prof">
+                                <select class="form-select" aria-label="Default select example" name="prof" id="prof" v-model="prof" v-bind:class="errors.prof ? 'is-invalid' : ''">
                                     <option selected value="Arabophone/francophone">Arabophone/francophone</option>
                                     <option value="Uniquement arabophone">Uniquement arabophone</option>
                                 </select>
+                                <p v-bind:key="errors.prof" class="invalid-feedback">{{errors.prof}}</p>
                             </div>
                         </div>
                     </fieldset>
                     <div class="row">
                         <div class="col">
                             <legend class="mt-3">Comment avez-vous connu notre site ?</legend>
-                            <select class="form-select" aria-label="Default select example" name="findOurWebsite" id="findOurWebsite" v-model="findOurWebsite">
+                            <select class="form-select" aria-label="Default select example" name="findOurWebsite" id="findOurWebsite" v-model="findOurWebsite" v-bind:class="errors.findOurWebsite ? 'is-invalid' : ''">
                                 <option selected value="Famille/Amis">Famille/Amis</option>
                                 <option value="Facebook">Facebook</option>
                                 <option value="Twitter">Twitter</option>
@@ -422,6 +432,7 @@
                                 <option value="Via un autre site internet">Via un autre site internet</option>
                                 <option value="Autre">Autre</option>
                             </select>
+                            <p v-bind:key="errors.findOurWebsite" class="invalid-feedback">{{errors.findOurWebsite}}</p>
                         </div>
                     </div>
                     <div class="mt-3 form-check">
@@ -452,20 +463,20 @@
                     },
                 ],
                 errors: [],
-                lastname: null,
-                firstname: null,
-                age: null,
-                phone: null,
-                email: null,
-                verifemail: null,
-                country: null,
-                support: null,
-                typeOfSession: null,
-                hoursPerWeek: null,
-                prof: null,
-                findOurWebsite: null,
-                terms: null,
-                output: ''
+                lastname: '',
+                firstname: '',
+                age: '',
+                phone: '',
+                email: '',
+                verifemail: '',
+                country: '',
+                support: '',
+                typeOfSession: '',
+                hoursPerWeek: '',
+                prof: '',
+                findOurWebsite: '',
+                terms: '',
+                output: '',
             }
         },
         methods: {
@@ -474,19 +485,19 @@
 
                 let currentObject = this
                 axios.post('https://localhost:8000/api/students', {
+                    /*verifemail: this.verifemail,
+                    terms: this.terms*/
                     lastname: this.lastname,
                     firstname: this.firstname,
                     age: this.age,
                     phone: this.phone,
                     email: this.email,
-                    verifemail: this.verifemail,
                     country: this.country,
                     support: this.support,
                     typeOfSession: this.typeOfSession,
                     hoursPerWeek: this.hoursPerWeek,
                     prof: this.prof,
                     findOurWebsite: this.findOurWebsite,
-                    terms: this.terms
                 })
                 .then((response) => {
                     console.log(response.data)
@@ -494,6 +505,13 @@
                 })
                 .catch((error) => {
                     currentObject.output = error
+                    if(error.response.data.violations){
+                        const apiErrors = {};
+                        error.response.data.violations.forEach(violation => {
+                            apiErrors[violation.propertyPath] = violation.message
+                        })
+                        this.errors = apiErrors
+                    }
                 })
 
                 if (this.lastname && this.firstname && this.age && this.phone && this.email && this.verifemail && this.country && this.support && this.typeOfSession && this.hoursPerWeek && this.prof && this.findOurWebsite &&
@@ -503,7 +521,7 @@
 
                 this.errors = []
 
-                if (!this.lastname) {
+                /*if (!this.lastname) {
                     this.errors.push('Le nom est requis')
                 }
                 if (!this.firstname) {
@@ -541,7 +559,7 @@
                 }
                 if (!this.terms) {
                     this.errors.push('Veuillez accepter les conditions générales')
-                }
+                }*/
             },
         }
     }
