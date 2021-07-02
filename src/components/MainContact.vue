@@ -13,33 +13,29 @@
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="lastname" class="text-start form-label">Votre nom</label>
-                                <input type="text" v-model="lastname" class="text-start form-control" id="lastname" placeholder="Nom">
+                                <input type="text" v-model="lastname" class="text-start form-control" id="lastname" placeholder="Nom" v-bind:class="errors.lastname ? 'is-invalid' : ''">
+                                <p v-bind:key="errors.lastname" class="invalid-feedback">{{errors.lastname}}</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="firstname" class="form-label">Votre prénom</label>
-                                <input type="text" v-model="firstname" class="form-control" id="firstname" placeholder="Prénom">
+                                <input type="text" v-model="firstname" class="form-control" id="firstname" placeholder="Prénom" v-bind:class="errors.firstname ? 'is-invalid' : ''">
+                                <p v-bind:key="errors.firstname" class="invalid-feedback">{{errors.firstname}}</p>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Votre email</label>
-                                <input type="email" v-model="email" class="form-control" id="email" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="mb-3">
-                                <label for="phone" class="form-label">Votre téléphone</label>
-                                <input type="tel" v-model="phone" class="form-control" id="phone" placeholder="Téléphone">
-                            </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Votre email</label>
+                            <input type="email" v-model="email" class="form-control" id="email" placeholder="Email" v-bind:class="errors.email ? 'is-invalid' : ''">
+                            <p v-bind:key="errors.email" class="invalid-feedback">{{errors.email}}</p>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Votre message</label>
-                        <textarea class="form-control" v-model="message" id="message" rows="3" placeholder="Message"></textarea>
+                        <textarea class="form-control" v-model="message" id="message" rows="3" placeholder="Message" v-bind:class="errors.message ? 'is-invalid' : ''"></textarea>
+                        <p v-bind:key="errors.message" class="invalid-feedback">{{errors.message}}</p>
                     </div>
                     <button type="submit" class="mt-5 mb-3 btn btn-block">Envoyer</button>
                 </form>
@@ -52,11 +48,10 @@ export default {
     data() {
         return {
             errors: [],
-            lastname: null,
-            firstname: null,
-            email: null,
-            phone: null,
-            message: null
+            lastname: '',
+            firstname: '',
+            email: '',
+            message: ''
         }
     },
     methods: {
@@ -77,6 +72,13 @@ export default {
             })
             .catch((error) => {
                     currentObject.output = error
+                    if(error.response.data.violations){
+                        const apiErrors = {};
+                        error.response.data.violations.forEach(violation => {
+                            apiErrors[violation.propertyPath] = violation.message
+                        })
+                        this.errors = apiErrors;
+                    }
             })
 
             if(this.lastname && this.firstname && this.email && this.phone && this.message){
@@ -85,7 +87,7 @@ export default {
 
             this.errors = []
 
-            if(!this.lastname){
+            /*if(!this.lastname){
                 this.errors.push('Le champs nom est requis !')
             }
             if(!this.firstname){
@@ -99,7 +101,7 @@ export default {
             }
             if(!this.message){
                 this.errors.push('Le champs message est requis !')
-            }
+            }*/
         }
     }
 }
