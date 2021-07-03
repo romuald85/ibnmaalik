@@ -438,7 +438,7 @@
                     <div class="mt-3 form-check">
                         <input class="form-check-input" type="checkbox" v-model="terms" name="terms" id="terms" value="true" required>
                         <label class="conditions form-check-label" for="terms">
-                            J'ai lu et accepte<span><a href="#"> les conditions générales</a></span>
+                            J'ai lu et accepte<span><a href="terms"> les conditions générales</a></span>
                         </label>
                     </div>
                     <p id="erreur" style="color: red;"></p>

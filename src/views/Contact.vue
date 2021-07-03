@@ -1,16 +1,18 @@
 <template>
     <div class="register">
-        <Banner/>
+        <Navbar/>
         <MainContact/>
+        <Footer/>
     </div>
 </template>
 <script>
-import Banner from '@/components/Banner.vue'
+import Navbar from '@/components/Navbar.vue'
 import MainContact from '@/components/MainContact.vue'
+import Footer from '@/components/Footer.vue'
 export default {
     name: 'Contact',
     components: {
-    Banner, MainContact
+    Navbar, MainContact, Footer
   }
 }
 </script>
