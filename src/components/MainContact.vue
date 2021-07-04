@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" id="contact">
         <div class="row">
             <div class="col">
                 <form action="" class="mt-5 mb-5" v-on:submit.prevent="checkForm">

@@ -3,7 +3,7 @@
         <div class="row bg-image">
             <div class="cont-text-button">
                 <h3 class="pb-4 text-dark">Vous avez une question ? N'hésitez pas à nous contacter</h3>
-                <button type="button" class="btn btn-outline-dark btn-lg">Contact</button>
+                <a type="button" href="#contact" class="btn btn-outline-dark btn-lg">Contact</a>
             </div>
         </div>
     </div>
