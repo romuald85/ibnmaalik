@@ -11,7 +11,7 @@
                     <p class="text-start text-center">L'inscription est simple remplissez notre formulaire:<span><a href="#"> cliquez ici</a></span></p>
                 </div>
                 <div class="bg-color-first col-md-6 nopadding">
-                    <img class="macbook" src="assets/images/macbook.jpg" alt="">
+                    <img class="macbook" src="assets/images/macbook.jpg" alt="laptop">
                 </div>
             </div>
         </div>
