@@ -72,7 +72,7 @@
 </script>
 <style scoped>
     .card {
-        background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
+       background-image: linear-gradient(to right top, #8cd9f1, #84dcf1, #7de0f1, #77e3ef, #71e6ed);
     }
 
     /* .card-body {

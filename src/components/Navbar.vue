@@ -54,6 +54,28 @@
         <br>
         <h2 class="big-title pt-5 pl-5 text-start second-title">Institut de langue arabe en ligne</h2>
       </div>
+      <div class="container-card">
+        <div class="sous-container">
+          <div class="card card1">
+            <img src="/assets/images/laptop.png" height="80" alt="classe">
+            Cours d'arabe
+          </div>
+          <div class="card">
+            <img src="/assets/images/quran.png" height="80" alt="classe">
+            Tajwid
+          </div>
+        </div>
+        <div class="sous-container">
+          <div class="card">
+            <img src="/assets/images/study.png" height="80" alt="classe">
+            Individuel
+          </div>
+          <div class="card">
+            <img src="/assets/images/education.png" height="80" alt="classe">
+            Collectif 
+          </div>
+        </div>
+      </div>
     </div>
   </header>
   <nav class="nav2 navbar navbar-light bg-light">
@@ -188,9 +210,32 @@
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 850px;
+    height: 100vh;
   }
 
+  .container-card{
+    height: 400px;
+    width: 50%;
+    margin: 100px auto;
+  }
+
+  .sous-container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card{
+    height: 160px;
+    width: 25%;
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    overflow: hidden;
+  }
+  
   .modal{
     background-color: rgba(140, 217, 241, 0.8);
   }
@@ -241,5 +286,57 @@
 
   a.nav-link {
     margin: 0 20px;
+  }
+
+  @media screen and (max-width: 1100px) {
+      .card{
+      width: 35%;
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    .container-card{
+      width: 60%;
+    }
+
+    .sous-container{
+    display: flex;
+    flex-wrap: nowrap;
+    }
+
+    .card{
+    width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    .container-card{
+    width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .container-card{
+    width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 580px) {
+    .card{
+    width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 490px) {
+    .second-title{
+    margin-top: 25px;
+    font-size: 20px;
+    }
+  }
+
+  @media screen and (max-width: 370px) {
+    .card{
+    font-size: 12px;
+    }
   }
 </style>

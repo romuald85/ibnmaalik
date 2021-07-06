@@ -11,7 +11,7 @@
                     <a href="#" class="mt-2 mb-2" v-for="book in books" v-bind:key="book.title">{{book.title}}</a>
                 </div>
             </div>
-            <p class="copyright text-muted text-center">Copyright 2021 IbnMaalik Tous droits réservés</p>
+            <p class="copyright text-muted text-center">&copy; Copyright 2021 IbnMaalik Tous droits réservés</p>
         </div>
 </template>
 <script>

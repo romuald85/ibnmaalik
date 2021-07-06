@@ -8,14 +8,14 @@
                 <div class="m-1 card-group">
                     <div class="m-3 card">
                         <div class="card-body">
-                            <a href="#">
+                            <a href="classes">
                                 <img src="assets/images/nour1.jpg" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="m-3 card">
                         <div class="card-body">
-                            <a href="#">
+                            <a href="classes">
                                 <img src="assets/images/medine.jpg" alt="">
                             </a>
                         </div>
@@ -24,14 +24,14 @@
                 <div class="m-1 card-group">
                     <div class="m-3 card">
                         <div class="card-body">
-                            <a href="#">
+                            <a href="classes">
                                 <img src="assets/images/alajour.jpg" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="m-3 card">
                         <div class="card-body">
-                            <a href="#">
+                            <a href="classes">
                                 <img src="assets/images/tajwid1.jpg" alt="">
                             </a>
                         </div>

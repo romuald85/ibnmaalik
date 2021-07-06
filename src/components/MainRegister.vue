@@ -568,5 +568,12 @@
     button {
         background: #8CD9F1;
         color: #2c3e50;
+        transition: 0.5s;
+    }
+
+    button:hover{
+        background: #71E6ED;
+        transition: 0.5s;
+        transform: scale(1.1);
     }
 </style>
