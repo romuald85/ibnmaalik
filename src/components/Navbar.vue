@@ -15,9 +15,9 @@
     <div class="bannerbox">
       <nav class="nav1 navbar navbar-dark" aria-label="First navbar example">
         <div class="container-fluid">
-          <div class="pt-2 pl-5">
-            <a class="navbar-brand text-dark" href="/">{{ title }}</a>
-            <p>La clé qui ouvre la porte de la science</p>
+          <div class="container-title">
+            <a class="first-title-1 navbar-brand text-dark" href="/">{{ title }}</a>
+            <p class="first-title-2">La clé qui ouvre la porte de la science</p>
           </div>
           <button class="mr-4 navbar-toggler navbar-dark custom-toggler" type="button" data-bs-toggle="modal" data-bs-target="#myModal"
             aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,9 +50,9 @@
       </div> -->
         </div>
       </nav>
-      <div class="pt-5 pl-5">
+      <div>
         <br>
-        <h2 class="big-title pt-5 pl-5 text-start second-title">Institut de langue arabe en ligne</h2>
+        <h2 class="big-title">Institut de langue arabe en ligne</h2>
       </div>
       <div class="container-card">
         <div class="sous-container">
@@ -192,6 +192,11 @@
     box-shadow: 0 0 0 0;
   }
 
+  .container-title{
+    padding-top: 15px;
+    padding-left: 20px;
+  }
+
 
   /* .navpopup {
     background-color: rgba(140, 217, 241, 0.8);
@@ -276,6 +281,11 @@
     padding: 0 0 0 20px;
   }
 
+  .big-title{
+    padding-top: 80px;
+    padding-left: 30px;
+  }
+
   a.nav-link.active {
     border-bottom: solid 2px #198754;
   }
@@ -294,9 +304,19 @@
     }
   }
 
+  @media screen and (max-width: 980px) {
+     .navbar{
+      position: relative;
+      transition: none;
+    }
+    .big-title{
+      padding-top: 0;
+    }
+  }
+
   @media screen and (max-width: 750px) {
     .container-card{
-      width: 60%;
+      width: 65%;
     }
 
     .sous-container{
@@ -313,24 +333,60 @@
     .container-card{
     width: 80%;
     }
+
+    .card{
+    width: 80%;
+    }
+    
+    .big-title{
+      font-size: 20px;
+      display: block;
+      text-align: center;
+    }
   }
+
+
+  @media screen and (max-width: 525px) {
+    .navbar-toggler{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: transparent;
+    }
+
+    .navbar-toggler-icon{
+      height: 15px;
+      width: 20px;
+    }
+
+    .container-title{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .first-title-1{
+      margin: 0 auto;
+    }
+  }
+
+  /* @media screen and (max-width: 490px) {
+    .second-title{
+    margin-top: 25px;
+    font-size: 20px;
+    }
+  } */
 
   @media screen and (max-width: 450px) {
     .container-card{
     width: 90%;
     }
-  }
 
-  @media screen and (max-width: 580px) {
-    .card{
-    width: 80%;
+    .first-title-2{
+      font-size: 15px;
     }
-  }
 
-  @media screen and (max-width: 490px) {
-    .second-title{
-    margin-top: 25px;
-    font-size: 20px;
+    .big-title{
+      padding-left: 0;
     }
   }
 
@@ -339,4 +395,5 @@
     font-size: 12px;
     }
   }
+  
 </style>

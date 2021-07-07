@@ -64,4 +64,11 @@ export default {
         height: auto;
          box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     }
+
+    @media screen and (max-width: 770px) {
+      .macbook{
+      width: 100%;
+      box-shadow: 0 0 0;
+    }
+  }
 </style>

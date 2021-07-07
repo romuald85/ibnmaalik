@@ -77,12 +77,19 @@
     }
 
     img{
-        height: 18vw;
+        height: 25vw;
         width: 100%;
         transition: transform 2s;
+        object-fit: cover;
     }
 
     img:hover{
         transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 585px) {
+        img{
+        height: 60vw;
+        }
     }
 </style>
