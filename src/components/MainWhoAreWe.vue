@@ -24,10 +24,7 @@ export default {
 }
 </script>
 <style scoped>
-    .container-fluid{
-        margin-bottom: 8%;
-    }
-
+    
     .bg-color-two{
         background: linear-gradient(to left, #f8f9fa 30%, #8CD9F1 0%);
         display: flex;
@@ -46,10 +43,11 @@ export default {
         margin-left: 60px;
     }
 
-    @media screen and (max-width: 770px) {
+    @media screen and (max-width: 767px) {
       .macbook{
       width: 100%;
       margin-left: 0;
+      display: none;
     }
   }
 </style>

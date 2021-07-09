@@ -12,6 +12,7 @@
                                 <img src="assets/images/nour1.jpg" alt="">
                             </a>
                         </div>
+                        <h5 class="card-title">Nour al bayan</h5>
                     </div>
                     <div class="m-3 card">
                         <div class="card-body">
@@ -19,6 +20,7 @@
                                 <img src="assets/images/medine.jpg" alt="">
                             </a>
                         </div>
+                        <h5 class="card-title">Les tomes de Médine</h5>
                     </div>
                 </div>
                 <div class="m-1 card-group">
@@ -28,6 +30,7 @@
                                 <img src="assets/images/alajour.jpg" alt="">
                             </a>
                         </div>
+                        <h5 class="card-title">Al ajouroumiyya</h5>
                     </div>
                     <div class="m-3 card">
                         <div class="card-body">
@@ -35,6 +38,7 @@
                                 <img src="assets/images/tajwid1.jpg" alt="">
                             </a>
                         </div>
+                        <h5 class="card-title">Tuhfa al atfal</h5>
                     </div>
                 </div>
             </div>

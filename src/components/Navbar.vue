@@ -1,6 +1,6 @@
 <template>
   <div class="modal fade" tabindex="-1" id="myModal">
-      <i class="mt-4 mr-5 bg-transparent float-right fas fa-times" data-bs-dismiss="modal" aria-label="Close"></i>
+      <i class="cross bg-transparent float-right fas fa-times" data-bs-dismiss="modal" aria-label="Close"></i>
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content bg-transparent">
           <div class="modal-body bg-transparent">
@@ -192,6 +192,10 @@
     box-shadow: 0 0 0 0;
   }
 
+  .cross{
+    padding-top: 15px; 
+  }
+
   .container-title{
     padding-top: 15px;
     padding-left: 20px;
@@ -239,6 +243,8 @@
     justify-content: center;
     font-weight: bold;
     overflow: hidden;
+    background: rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(5px);
   }
   
   .modal{

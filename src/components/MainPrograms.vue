@@ -1,5 +1,5 @@
 <template>
-    <section class="mt-5 bg-white">
+    <section class="bg-white">
         <div class="container">
             <div class="row">
                 <div class="mt-4 col-md-4">
@@ -51,7 +51,7 @@
                                 <a href="register"><p>Le matériel requis:</p></a>
                                 <a href="register"><p>Un ordinateur, une tablette ou un smartphone</p></a>
                                 <a href="register"><p>Un casque avec micro</p></a>
-                                <a href="register"><p>Un compte Zoom ou Whereby</p></a>
+                                <a href="register"><p>Un compte Zoom</p></a>
                             </div>
                         </div>
                     </div>
@@ -71,8 +71,22 @@
     }
 </script>
 <style scoped>
+    section{
+        background: linear-gradient(to bottom, #B6E3F1, #0001),
+        fixed no-repeat center url("/assets/images/desert2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
     .card {
-       background-image: linear-gradient(to right top, #8cd9f1, #84dcf1, #7de0f1, #77e3ef, #71e6ed);
+       /*background-image: linear-gradient(to right top, #8cd9f1, #84dcf1, #7de0f1, #77e3ef, #71e6ed);*/
+       /*background-image: linear-gradient(to right top, #d99661, #b6b26a, #8fc694, #77d3c8, #8cd9f1);*/
+       /*background: rgb(140,217,241);
+        background: linear-gradient(90deg, rgba(140,217,241,1) 0%, rgba(217,150,97,1) 100%);*/
+        /*background: #e3be81;*/
+        /*background-image: linear-gradient(to right top, #e3be81, #d8af76, #cd9f6b, #c29161, #b68257);*/
+        background: rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(5px);
     }
 
     /* .card-body {

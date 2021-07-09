@@ -24,7 +24,7 @@ export default {
         url('/assets/images/landscape.jpg') fixed;
         background-repeat: no-repeat;
         background-size: cover;
-        height: 300px;
+        height: 400px;
         display: flex;
     }
 
