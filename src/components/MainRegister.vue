@@ -484,7 +484,7 @@
                 e.preventDefault()
 
                 let currentObject = this
-                axios.post('https://localhost:8000/api/students', {
+                axios.post('https://ibnmaalik-backend.herokuapp.com/api/students', {
                     /*verifemail: this.verifemail,
                     terms: this.terms*/
                     lastname: this.lastname,

@@ -3,6 +3,6 @@
  */
  module.exports = {
     devServer: {
-        proxy: 'https://localhost:8000'
+        proxy: 'https://ibnmaalik-backend.herokuapp.com/'
       }
   }

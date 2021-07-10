@@ -59,7 +59,7 @@ export default {
             e.preventDefault()
 
             let currentObject = this
-            axios.post('https://localhost:8000/api/contacts', {
+            axios.post('https://ibnmaalik-backend.herokuapp.com/api/contacts', {
                 lastname: this.lastname,
                 firstname: this.firstname,
                 email: this.email,
