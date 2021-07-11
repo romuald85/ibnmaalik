@@ -217,7 +217,7 @@
     background: linear-gradient(to bottom, #B6E3F1, #0001),
       fixed no-repeat center url("/assets/images/desert.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto 100vh;
     position: relative;
     height: 100vh;
   }
