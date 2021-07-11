@@ -224,9 +224,9 @@
 
   @supports (-webkit-touch-callout: none) {
     .bannerbox {
-        background: url("/assets/images/desert.jpg") center top no-repeat scroll;
+        background: url("/assets/images/desert.jpg") center top no-repeat;
         background-size: auto 100vh;
-        background-attachment: fixed !important;
+        background-attachment: scroll !important;
     }    
 }
 
