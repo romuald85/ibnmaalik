@@ -170,6 +170,12 @@
 </script>
 
 <style scoped>
+  @supports (-webkit-touch-callout: none) {
+    .banner {
+        background: url("/assets/images/desert.jpg") center top no-repeat scroll;
+        background-size: auto 100vh;
+    }    
+  }
   .navbar{
     position: fixed;
     background-color: transparent;
@@ -215,8 +221,7 @@
 
   .bannerbox {
     background: linear-gradient(to bottom, #B6E3F1, #0001),
-    no-repeat center url("/assets/images/desert.jpg");
-    background-attachment: fixed;
+      fixed no-repeat center url("/assets/images/desert.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -322,9 +327,6 @@
   }
 
   @media screen and (max-width: 750px) {
-    .bannerbox{
-      background-size: 100% 100vh;
-    }
     .container-card{
       width: 65%;
     }
