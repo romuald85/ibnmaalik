@@ -170,12 +170,6 @@
 </script>
 
 <style scoped>
-  @supports (-webkit-touch-callout: none) {
-    .banner {
-        background: url("/assets/images/desert.jpg") center top no-repeat scroll;
-        background-size: auto 100vh;
-    }    
-  }
   .navbar{
     position: fixed;
     background-color: transparent;
@@ -227,6 +221,13 @@
     position: relative;
     height: 100vh;
   }
+
+  @supports (-webkit-touch-callout: none) {
+    .bannerbox {
+        background: url("/assets/images/desert.jpg") center top no-repeat scroll;
+        background-size: auto 100vh;
+    }    
+}
 
   .container-card{
     height: 400px;
