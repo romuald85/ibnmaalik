@@ -215,7 +215,8 @@
 
   .bannerbox {
     background: linear-gradient(to bottom, #B6E3F1, #0001),
-      fixed no-repeat center url("/assets/images/desert.jpg");
+    no-repeat center url("/assets/images/desert.jpg");
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -321,6 +322,9 @@
   }
 
   @media screen and (max-width: 750px) {
+    .bannerbox{
+      background-size: 100% 100vh;
+    }
     .container-card{
       width: 65%;
     }
