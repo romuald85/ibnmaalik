@@ -71,13 +71,6 @@
     }
 </script>
 <style scoped>
-    @supports (-webkit-touch-callout: none) {
-    section {
-        background: url("/assets/images/desert2.jpg") center top no-repeat;
-        background-size: auto 100vh;
-        background-attachment: fixed !important;
-    }    
-}
     section{
         background: linear-gradient(to bottom, #B6E3F1, #0001),
         fixed no-repeat center url("/assets/images/desert2.jpg");
@@ -85,6 +78,14 @@
         background-size: cover;
         position: relative;
     }
+
+    @supports (-webkit-touch-callout: none) {
+    section {
+        background: url("/assets/images/desert2.jpg") center top no-repeat;
+        background-size: auto 100vh;
+        background-attachment: fixed !important;
+    }    
+}
     .card {
        /*background-image: linear-gradient(to right top, #8cd9f1, #84dcf1, #7de0f1, #77e3ef, #71e6ed);*/
        /*background-image: linear-gradient(to right top, #d99661, #b6b26a, #8fc694, #77d3c8, #8cd9f1);*/

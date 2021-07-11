@@ -19,13 +19,6 @@ export default {
 }
 </script>
 <style scoped>
-    @supports (-webkit-touch-callout: none) {
-    .bannerbox {
-        background: url("/assets/images/landscape.jpg") center top no-repeat;
-        background-size: auto 100vh;
-        background-attachment: fixed !important;
-    }    
-}
     .bg-image{
         background: linear-gradient(to bottom, #B6E3F1, #0001), 
         url('/assets/images/landscape.jpg') fixed;
@@ -34,6 +27,14 @@ export default {
         height: 400px;
         display: flex;
     }
+
+    @supports (-webkit-touch-callout: none) {
+    .bg-image {
+        background: url("/assets/images/landscape.jpg") center top no-repeat;
+        background-size: auto 100vh;
+        background-attachment: fixed !important;
+    }    
+}
 
     .cont-text-button{
        text-align: center;
