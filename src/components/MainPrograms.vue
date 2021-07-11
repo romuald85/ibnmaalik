@@ -71,6 +71,13 @@
     }
 </script>
 <style scoped>
+    @supports (-webkit-touch-callout: none) {
+    section {
+        background: url("/assets/images/desert2.jpg") center top no-repeat;
+        background-size: auto 100vh;
+        background-attachment: fixed !important;
+    }    
+}
     section{
         background: linear-gradient(to bottom, #B6E3F1, #0001),
         fixed no-repeat center url("/assets/images/desert2.jpg");
