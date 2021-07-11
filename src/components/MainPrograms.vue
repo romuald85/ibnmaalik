@@ -81,9 +81,8 @@
 
     @supports (-webkit-touch-callout: none) {
     section {
-        background: url("/assets/images/desert2.jpg") center top no-repeat;
+        background: url("/assets/images/desert2.jpg") center top no-repeat scroll;
         background-size: auto 100vh;
-        background-attachment: fixed !important;
     }    
 }
     .card {
