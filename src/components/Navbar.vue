@@ -226,6 +226,7 @@
     .bannerbox {
         background: url("/assets/images/desert.jpg") center top no-repeat scroll;
         background-size: auto 100vh;
+        background-attachment: fixed;
     }    
 }
 
